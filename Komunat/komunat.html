@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    
+<h2 style="text-align: center; text-transform: uppercase; font-family: 'Poppins', sans-serif;">
+
+KOHA E MBETUR  PëR Të REZERVUAR VENDIN TUAJ Në EVENET</h2>
+<div id="clockdiv">
+    <div>
+      <span class="days"></span>
+      <div class="smalltext">Days</div>  
+    </div>
+    <div>
+      <span class="hours"></span>
+      <div class="smalltext">Hours</div>
+    </div>
+    <div>
+      <span class="minutes"></span>
+      <div class="smalltext">Minutes</div>
+    </div>
+    <div>
+      <span class="seconds"></span>
+      <div class="smalltext">Seconds</div>
+    </div>
+  </div>
+  
+
+  <div class="container">
+    <h2>Kërkoni EVENTE</h2>
+    <p>Shkruaj emrin e Restaurantit që po kërkon:</p>  
+    <input class="form-control" id="myInput" type="text" placeholder="Kërko..">
+    <br>
+    <ul class="list-group" id="myList">
+        <a href="index.html">  <li class="list-group-item" >Nartel Hotel </li></a>
+        <a href="index.html">  <li class="list-group-item" >Grand Hotel </li></a>
+        <a href="index.html">  <li class="list-group-item" >Sirius Hotel </li></a>
+        <a href="index.html">  <li class="list-group-item" >Kristal Hotel </li></a>
+        <a href="index.html">  <li class="list-group-item" >City In Hotel </li></a>
+        <a href="index.html">  <li class="list-group-item" >Golden Hotel </li></a>
+        <a href="index.html">  <li class="list-group-item" >Garden Hotel </li></a>
+        <a href="index.html">  <li class="list-group-item" >La Corte Hotel </li></a>
+        <a href="index.html">  <li class="list-group-item" >Prishtina Hotel </li></a>
+        <a href="index.html">  <li class="list-group-item" >Swiss Diamond Hotel </li></a>
+        <a href="index.html">  <li class="list-group-item" >Emerald Hotel </li></a>
+        <a href="index.html">  <li class="list-group-item" >4 Llulla Hotel </li></a>
+        <a href="index.html">  <li class="list-group-item" >Four Points by Sheraton Prishtina Hotel </li></a>
+    </ul>  
+  </div>
+  
+  <style>
+      
+ h2,p{
+    font-family: 'Poppins', sans-serif;
+ }
+  #clockdiv{
+      top: 0px;
+      max-height: 100px;
+      background-color: #7fffd4;
+      font-family: sans-serif;
+      color:black;
+      padding: 25px;
+      border-radius: 25px ;
+      display: flex;
+    margin-left:40%;
+    margin-right:40%; 
+    align-items:center;
+    justify-content:space-between;
+ 
+      font-weight: 100;
+      text-align: center;
+      font-size: 25px;
+
+  }
+  #clockdiv > div{
+      display: inline-block;
+  }
+  #clockdiv div > span{	
+      display: inline-block;
+  }
+  .smalltext{
+      font-size: 10px;
+  }
+  
+  
+</style>
+  
+  
+  <script>
+  
+  
+  function getTimeRemaining(endtime) {
+    const total = Date.parse(endtime) - Date.parse(new Date());
+    const seconds = Math.floor((total / 1000) % 60);
+    const minutes = Math.floor((total / 1000 / 60) % 60);
+    const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
+    const days = Math.floor(total / (1000 * 60 * 60 * 24));
+    
+    return {
+      total,
+      days,
+      hours,
+      minutes,
+      seconds
+    };
+  }
+  
+  function initializeClock(id, endtime) {
+    const clock = document.getElementById(id);
+    const daysSpan = clock.querySelector('.days');
+    const hoursSpan = clock.querySelector('.hours');
+    const minutesSpan = clock.querySelector('.minutes');
+    const secondsSpan = clock.querySelector('.seconds');
+  
+    function updateClock() {
+      const t = getTimeRemaining(endtime);
+  
+      daysSpan.innerHTML = t.days + "   :";
+      hoursSpan.innerHTML = ('0' + t.hours).slice(-2)+ "   :";
+      minutesSpan.innerHTML = ('0' + t.minutes).slice(-2)+ "   :";
+      secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+  
+      if (t.total <= 0) {
+        clearInterval(timeinterval);
+      }
+    }
+  
+    updateClock();
+    const timeinterval = setInterval(updateClock, 1000);
+  }
+  
+  const deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
+  initializeClock('clockdiv', deadline);
+  
+  
+</script></body>
+</html>

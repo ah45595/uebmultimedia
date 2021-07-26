@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <h2>Kërkoni Restaurante</h2>
+    <p>Shkruaj emrin e Restaurantit që po kërkon:</p>  
+    <input class="form-control" id="myInput" type="text" placeholder="Kërko..">
+    <br>
+    <ul class="list-group" id="myList">
+        <a href="index.html">  <li class="list-group-item" >Nartel Hotel </li></a>
+        <a href="index.html">  <li class="list-group-item" >Grand Hotel </li></a>
+        <a href="index.html">  <li class="list-group-item" >Sirius Hotel </li></a>
+        <a href="index.html">  <li class="list-group-item" >Kristal Hotel </li></a>
+        <a href="index.html">  <li class="list-group-item" >City In Hotel </li></a>
+        <a href="index.html">  <li class="list-group-item" >Golden Hotel </li></a>
+        <a href="index.html">  <li class="list-group-item" >Garden Hotel </li></a>
+        <a href="index.html">  <li class="list-group-item" >La Corte Hotel </li></a>
+        <a href="index.html">  <li class="list-group-item" >Prishtina Hotel </li></a>
+        <a href="index.html">  <li class="list-group-item" >Swiss Diamond Hotel </li></a>
+        <a href="index.html">  <li class="list-group-item" >Emerald Hotel </li></a>
+        <a href="index.html">  <li class="list-group-item" >4 Llulla Hotel </li></a>
+        <a href="index.html">  <li class="list-group-item" >Four Points by Sheraton Prishtina Hotel </li></a>
+    </ul>  
+  </div>
+  
+  <script>
+  $(document).ready(function(){
+    $("#myInput").on("keyup", function() {
+      var value = $(this).val().toLowerCase();
+      $("#myList li").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    });
+  });
+  </script>
