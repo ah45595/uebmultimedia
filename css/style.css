@@ -52,5 +52,95 @@
 .videoSlider .navigationSlider li img:hover{
     width:200px;
 }
+*,*:after,*:before{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+body{
+	font-family: arial;
+	font-size: 16px;
+	margin: 0;
+	line-height: 1.4;
+	background: #fff;
+	color: #000;
+}
+
+.header{
+	position: fixed;
+	left: 0;
+	width: 100%;
+	z-index: 1000;
+	transition: all 0.1s ease-in-out;
+}
+.header.fixed{
+	opacity: 0;
+	transform: translateY(-50%);
+}
+.header.active {
+	transition: all 0.4s ease-in-out;
+	background: #024E73;
+	padding: 20px 0;
+    opacity: 0.85;
+    transform: none;
+}
+.container{
+	max-width: 1200px;
+	margin:0 auto;
+	padding:0 15px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.logo{
+	font-size: 40px;
+	color: #fff;
+	text-decoration: none;
+	color: red;
+	font-weight: 700;
+}
+.main_nav ul{
+	padding: 0;
+	margin:0;
+	list-style: none;
+}
+.main_nav ul li{
+	display: inline-block;
+	margin-left: 25px;
+	font-family: "Montserrat",sans-serif;
+}
+.main_nav ul li a{
+	text-decoration: none;
+	color: #fff;
+	font-size: 18px;
+	transition: all 0.3s linear;
+}
+.main_nav ul li:hover a{
+	color:#ECC308; 
+}
+.banner{
+	background: url('../images/banner.jpg') no-repeat center top;
+	background-size: cover;
+	height: 10vh;
+	position: relative;
+}
+.banner .overlay{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background:linear-gradient(to right bottom,rgba(7,12,18,0.9) 50%, rgba(5,90,132,0.94) 100%);
+}
+
+.body_wrap{
+	padding:50px 0;
+	font-size: 18px;
+}
+.body_wrap h1{
+	font-family: "Courier";
+	font-size: 50px;
+}
 
 
