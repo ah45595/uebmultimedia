@@ -44,6 +44,17 @@ cities.forEach(city => {
         document.getElementById("ferizaji").onclick = function(){
             location.href="Komunat/ferizaji.html";
         };
+        document.getElementById("mitrovica").onclick = function(){
+            location.href="Komunat/mitrovica.html";
+        };
+        document.getElementById("peja").onclick = function(){
+            location.href="Komunat/peja.html";
+        };
+        document.getElementById("rahoveci").onclick = function(){
+            location.href="Komunat/rahoveci.html";
+        };
+        
+        
     });
 
     /* ----------------------------------------------------------- */
