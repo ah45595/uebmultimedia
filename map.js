@@ -32,6 +32,12 @@ cities.forEach(city => {
         document.getElementById("gjilani").onclick = function () {
             location.href = "Komunat/gjilani.html";
         };
+        document.getElementById("prishtina").onclick = function () {
+            location.href = "Komunat/prishtina.html";
+        };
+        document.getElementById("prizreni").onclick = function () {
+            location.href = "Komunat/prizreni.html";
+        };
     });
 
     /* ----------------------------------------------------------- */
