@@ -19,6 +19,42 @@
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
   }
+  
+      
+      h2,p{
+         font-family: 'Poppins', sans-serif;
+      }
+       #clockdiv{
+           top: 0px;
+           max-height: 100px;
+           background-color: #7fffd4;
+        
+           color:black;
+           padding: 25px;
+           border-radius: 25px ;
+           display: flex;
+         margin-left:40%;
+         margin-right:40%; 
+         align-items:center;
+         justify-content:space-between;
+      
+           font-weight: 100;
+           text-align: center;
+           font-size: 25px;
+     
+       }
+       #clockdiv > div{
+           display: inline-block;
+       }
+       #clockdiv div > span{	
+           display: inline-block;
+       }
+       .smalltext{
+           font-size: 10px;
+       }
+       
+       
+    
 </style>
 <body>
 
@@ -30,16 +66,13 @@
 	<div class="container">
 		<a href="index.html" class="logo"><img src="images/logo.png"  width="100%" height="75px" /></a>
 		<nav class="main_nav">
-      <label for="toggle">&#9776;</label>
-      <input type="checkbox" id="toggle"/>
-			<ul class="menu">
+			<ul>
 				<li><a href="index.html">Home</a></li>
 				<li><a href="Hiking/hiking.html">Hiking</a></li>
 				<li><a href="hotelet/hotelet.html">Hotelet</a></li>
 				<li><a href="Komunat/komunat.html">Komunat</a></li>
 				<li><a href="qendrat/qendrat.html">Qendrat</a></li>
         <li><a href="restaurantet/restaurantet.html">Restaurantet</a></li>
-        <li><a href="team.html">Rreth Nesh</a></li>
 			</ul>
 		</nav>
 	</div>
@@ -86,16 +119,16 @@
         <audio src="audio/audio1.mp3" controls></audio>
       </div>
       <div class="col p-2">
-        <h4><b>Dy dele 300 pare</b></h4>
+        <h4><b>Luan Rrapushi - Dy dele 300 pare</b></h4>
         <audio src="audio/audio2.mp3" controls></audio>
       </div>
       <div class="w-100"></div>
       <div class="col p-2">
-        <h4><b>Valle Kosovare </b></h4>
+        <h4><b>Shpat Kasapi - Valle Kosovare </b></h4>
         <audio src="audio/audio3.mp3" controls></audio>
       </div>
       <div class="col p-2">
-        <h4><b>Per gurbet</b></h4>
+        <h4><b>Mhill Krasniqi -Per gurbet kete kange ja u knova</b></h4>
         <audio src="audio/audio4.mp3" controls></audio>
       </div>
     </div>
@@ -247,6 +280,28 @@
     </section>
     <!-- Section: Iframe -->
   </div>
+
+  <h2 style="text-align: center; text-transform: uppercase; font-family: 'Poppins', sans-serif;">
+
+    KOHA E MBETUR  PëR Të REZERVUAR VENDIN TUAJ Në EVENET</h2>
+    <div id="clockdiv">
+        <div>
+          <span class="days"></span>
+          <div class="smalltext">Days</div>  
+        </div>
+        <div>
+          <span class="hours"></span>
+          <div class="smalltext">Hours</div>
+        </div>
+        <div>
+          <span class="minutes"></span>
+          <div class="smalltext">Minutes</div>
+        </div>
+        <div>
+          <span class="seconds"></span>
+          <div class="smalltext">Seconds</div>
+        </div>
+      </div>
   <!-- Grid container -->
 
   <!-- Copyright -->
@@ -256,6 +311,54 @@
   </div>
   <!-- Copyright -->
 </footer>
+<script>
+  
+  
+  function getTimeRemaining(endtime) {
+    const total = Date.parse(endtime) - Date.parse(new Date());
+    const seconds = Math.floor((total / 1000) % 60);
+    const minutes = Math.floor((total / 1000 / 60) % 60);
+    const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
+    const days = Math.floor(total / (1000 * 60 * 60 * 24));
+    
+    return {
+      total,
+      days,
+      hours,
+      minutes,
+      seconds
+    };
+  }
+  
+  function initializeClock(id, endtime) {
+    const clock = document.getElementById(id);
+    const daysSpan = clock.querySelector('.days');
+    const hoursSpan = clock.querySelector('.hours');
+    const minutesSpan = clock.querySelector('.minutes');
+    const secondsSpan = clock.querySelector('.seconds');
+  
+    function updateClock() {
+      const t = getTimeRemaining(endtime);
+  
+      daysSpan.innerHTML = t.days + "   :";
+      hoursSpan.innerHTML = ('0' + t.hours).slice(-2)+ "   :";
+      minutesSpan.innerHTML = ('0' + t.minutes).slice(-2)+ "   :";
+      secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+  
+      if (t.total <= 0) {
+        clearInterval(timeinterval);
+      }
+    }
+  
+    updateClock();
+    const timeinterval = setInterval(updateClock, 1000);
+  }
+  
+  const deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
+  initializeClock('clockdiv', deadline);
+  
+  
+</script>
 <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
 <script type="text/javascript" src="js/audio.js"></script>
