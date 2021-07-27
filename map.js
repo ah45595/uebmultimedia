@@ -53,6 +53,19 @@ cities.forEach(city => {
         document.getElementById("rahoveci").onclick = function(){
             location.href="Komunat/rahoveci.html";
         };
+        document.getElementById("hoteli1").onclick = function(){
+            location.href="hotelet/hoteli1.html";
+        };
+        document.getElementById("hoteli2").onclick = function(){
+            location.href="hotelet/hoteli2.html";
+        };
+        document.getElementById("hoteli3").onclick = function(){
+            location.href="hotelet/hoteli3.html";
+        };
+        document.getElementById("hoteli4").onclick = function(){
+            location.href="hotelet/hoteli4.html";
+        };
+       
         
         
     });
