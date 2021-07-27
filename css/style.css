@@ -171,4 +171,45 @@ body{
 	width: 25px;
 }
 
+label {
+    margin: 0 40px 0 0;
+    font-size: 26px;
+    line-height: 70px;
+    display: none;
+    width: 26px;
+    float: right;
+}
+#toggle {
+    display: none;
+}
+
+
+@media only screen and (max-width: 700px) {
+    label {
+        display: block;
+        cursor: pointer;
+		color:yellow;
+    }
+    .menu {
+        text-align: center;
+        width: 100%;
+        display: none;
+    }
+    .menu a {
+        display: block;
+        border-bottom: 1px solid #EAEAEB;
+        margin: 0;
+     
+    }
+    #toggle:checked + .menu {
+        display: block;
+    }
+
+	h1.w-100.text-center {
+		margin-left: 0 !important;
+	}
+    
+    
+}
+
 
