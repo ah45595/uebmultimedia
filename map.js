@@ -38,6 +38,12 @@ cities.forEach(city => {
         document.getElementById("prizreni").onclick = function () {
             location.href = "Komunat/prizreni.html";
         };
+        document.getElementById("gjakova").onclick = function(){
+            location.href="Komunat/gjakova.html";
+        };
+        document.getElementById("ferizaji").onclick = function(){
+            location.href="Komunat/ferizaji.html";
+        };
     });
 
     /* ----------------------------------------------------------- */
