@@ -1,0 +1,35 @@
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<button type="button">one</button>
+<div class="butonat" id="one">one</div>
+<button type="button">two</button>
+<div class="butonat" id="two">two</div>
+<button type="button">three</button>
+<div class="butonat" id="three">three</div>
+
+<style>
+    #one, #two, #three {
+  width: 100px;
+  height: 100px;
+  background: red;
+  position: absolute;
+  top: 30px;
+  left: 10px;
+}
+#two, #three {
+  display: none;
+}
+
+button {
+  float: left;
+}
+</style>
+<script>
+    $(document).ready(function () {
+  $("button").click(function () {
+    $(".butonat").hide();
+    $(this).next().show();
+  });
+});
+</script>
