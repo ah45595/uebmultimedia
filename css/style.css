@@ -143,4 +143,32 @@ body{
 	font-size: 50px;
 }
 
+.track-title {
+	position: absolute;
+	top: 200px;
+	right: 0;
+	left: 0;
+	color: white;
+	font-family: Calibri;
+	font-size: 100px;
+	text-align: center;
+
+}
+
+.visualizer-container {
+	position: relative;
+	margin: 80px;
+	height:80px;
+	right: 0;
+	left: 0;
+	text-align: center;
+}
+
+.visualizer-container__bar {
+	display: inline-block;
+	background: black;
+	margin: 0 2px;
+	width: 25px;
+}
+
 
