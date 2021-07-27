@@ -47,5 +47,5 @@
   renderFrame();
 
   audio.volume = 0.1;
-  audio.play();
+  // audio.play();
 })();
