@@ -27,7 +27,10 @@ cities.forEach(city => {
 
         //alert
         document.getElementById("kamenica").onclick = function () {
-            location.href = "kamenica.html";
+            location.href = "Komunat/kamenica.html";
+        };
+        document.getElementById("gjilani").onclick = function () {
+            location.href = "Komunat/gjilani.html";
         };
     });
 
